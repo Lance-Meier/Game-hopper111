@@ -1,0 +1,23 @@
+body {
+  background-color: #FEE468;
+  margin:0;
+}
+
+#heading {
+  display: none;
+  justify-content: flex-start;
+  align-content: center;
+
+
+}
+h1 {
+  color: #D4582A;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4em;
+  margin-bottom: 0;
+  padding-left: 100px;
+}
+#game-board{
+  display: flex;
+  justify-content: flex-end;
+}
