@@ -1,10 +1,10 @@
 var images = {
-    bg:"../images/desert-background.jpg",
-    cloud:"../images/cloud.png",
-    hopperL:"../kangaroo-sprite-L.png",
-    hopperR:"../images/kangaroo-sprite-R.png",
-    powerUp:"../images/watermelon.png",
-    worldBg:"../images/world-bg.png",
+    bg:"images/desert-background.jpg",
+    cloud:"images/cloud.png",
+    hopperL:"images/kangaroo-sprite-L.png",
+    hopperR:"images/kangaroo-sprite-R.png",
+    powerUp:"images/watermelon.png",
+    worldBg:"images/world-bg.png",
 };
 var ctx ;
 $(document).ready(function(){
