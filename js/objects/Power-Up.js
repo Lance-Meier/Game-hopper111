@@ -11,4 +11,5 @@
         this.draw = function(hopper){
             ctx.drawImage(this.img,this.x,this.y+350 - hopper.y,this.width,this.height);
         };
+        
     }

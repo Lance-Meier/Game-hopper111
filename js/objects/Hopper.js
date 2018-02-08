@@ -8,7 +8,7 @@ function Hopper(){
   this.speed = 10;
   this.velX = 0;
   this.velY = 0;
-  this.friction = .96;
+  this.friction = .95;
   this.gravity = 0;
   this.isJumping = false;
 
@@ -20,7 +20,11 @@ function Hopper(){
     this.draw();
   }.bind(this);
   this.draw = function(){
+    if(this.y > 200){
     ctx.drawImage(this.img,this.x,this.y,this.width,this.height);
+    } else {
+      ctx.drawImage(this.img,this.x,this.y+210,this.width,this.height);
+    }
   };
 
   //Movement
@@ -66,12 +70,34 @@ function Hopper(){
   //Platform Check
 
   this.onCloud = function(cloud){
-    if (this.y >= cloud.y -70 && this.y <= cloud.y + cloud.height && this.x >= cloud.x && this.x <= cloud.x + 210) {
+    if (this.y >= cloud.y -70 && this.y < cloud.y + cloud.height && this.x >= cloud.x && this.x <= cloud.x + 210) {
       this.isJumping = false;
-      this.y = cloud.y - 70;
+      this.y = (cloud.y - 70);
       this.velY = 0;
-      console.log(this.y)
       return true
     }
   };
+ /*
+  this.gravityDown = function(){
+    this.gravity = 1;
+  };
+  this.gravityUp = function (){
+    this.gravity = 1.5;
+  };
+  this.powerUpTimer = function (){
+    setTimeout(function(){ 
+        this.gravityUp(); 
+    }, 3000);
+  };
+
+  this.powerUp = function(powerUp){
+    if (this.y >= powerUp.y && this.y <= powerUp.y + powerUp.height && this.x >= powerUp.x && this.x <= powerUp.x + powerUp.width){
+        this.gravityDown();
+        this.powerUpTimer();
+    }
+  };
+  */
+
+
+
 }

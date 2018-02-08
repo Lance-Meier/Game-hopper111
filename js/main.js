@@ -3,7 +3,8 @@ var images = {
     cloud:"/Users/lancemeier/Downloads/Ironhack/Week3/Hopper/images/cloud.png",
     hopperL:"/Users/lancemeier/Downloads/Ironhack/Week3/Hopper/images/kangaroo-sprite-L.png",
     hopperR:"/Users/lancemeier/Downloads/Ironhack/Week3/Hopper/images/kangaroo-sprite-R.png",
-    powerUp:"/Users/lancemeier/Downloads/Ironhack/Week3/Hopper/images/watermelon.png"
+    powerUp:"/Users/lancemeier/Downloads/Ironhack/Week3/Hopper/images/watermelon.png",
+    worldBg:"/Users/lancemeier/Downloads/Ironhack/Week3/Hopper/images/world-bg.png",
 };
 var ctx ;
 $(document).ready(function(){
@@ -49,18 +50,29 @@ ctx.fillRect(0,0,canvas.width,canvas.height);
         hopper.velX *= hopper.friction;
         hopper.velY *= hopper.friction;
         hopper.onCloud(cloud);
+        //checkPowerUp();
         hopper.xBoundary();
         hopper.yBoundary();
-        console.log(hopper.velY);
+        console.log(hopper.velX);
 
-        //checkPowerUp();
       }
+
+    //Draw More Background
     
+    function scrollUp(){
+       
+    }
+    
+
+
     //Stop Game
     
     function stopGame(){
         clearInterval(interval);
       }
+
+
+
    
  /*     
     //Generators
@@ -84,7 +96,7 @@ ctx.fillRect(0,0,canvas.width,canvas.height);
     
     //Special Draws
     
-    function drawClouds(){
+    function drawBG(){
     
     }
     
