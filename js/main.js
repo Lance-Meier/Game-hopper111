@@ -1,10 +1,10 @@
 var images = {
-    bg:"/Users/lancemeier/Downloads/Ironhack/Week3/Hopper/images/desert-background.jpg",
-    cloud:"/Users/lancemeier/Downloads/Ironhack/Week3/Hopper/images/cloud.png",
-    hopperL:"/Users/lancemeier/Downloads/Ironhack/Week3/Hopper/images/kangaroo-sprite-L.png",
-    hopperR:"/Users/lancemeier/Downloads/Ironhack/Week3/Hopper/images/kangaroo-sprite-R.png",
-    powerUp:"/Users/lancemeier/Downloads/Ironhack/Week3/Hopper/images/watermelon.png",
-    worldBg:"/Users/lancemeier/Downloads/Ironhack/Week3/Hopper/images/world-bg.png",
+    bg:"../images/desert-background.jpg",
+    cloud:"../images/cloud.png",
+    hopperL:"../kangaroo-sprite-L.png",
+    hopperR:"../images/kangaroo-sprite-R.png",
+    powerUp:"../images/watermelon.png",
+    worldBg:"../images/world-bg.png",
 };
 var ctx ;
 $(document).ready(function(){
