@@ -2,7 +2,7 @@ function Hopper(){
 
   //Core Properties
   this.x = 350;
-  this.y = 350;
+  this.y = 10000;
   this.width = 125;
   this.height = 125;
   this.speed = 10;
