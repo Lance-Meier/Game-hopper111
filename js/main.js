@@ -6,6 +6,13 @@ var images = {
     powerUp:"images/watermelon.png",
     worldBg:"images/world-bg.png",
 };
+var jump = new Audio();
+jump.src ="audio/cartoon_hop_jump_bounce.mp3";
+
+var music = new Audio();
+music.src ="audio/Puzzle-Theme1.wav";
+
+
 var ctx ;
 $(document).ready(function(){
 var canvas = document.getElementById("canvas");
@@ -38,6 +45,8 @@ ctx.fillRect(0,0,canvas.width,canvas.height);
         cloud2.y = 50;
         cloud3.x = 0;
         cloud3.y = -150;
+        playMusic();
+        setInterval(playMusic, 43000);
         interval = setInterval(updateGame, 1000/60);
       }
       
@@ -66,6 +75,15 @@ ctx.fillRect(0,0,canvas.width,canvas.height);
         console.log(hopper.y);
 
       }
+    // Play Sounds
+
+    function playMusic(){
+        music.play();
+    }
+
+    Hopper.prototype.playJump = function(){
+        jump.play();
+    }
 
     //Draw More Background
     

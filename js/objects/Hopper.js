@@ -27,12 +27,17 @@ function Hopper(){
     }
   };
 
+  //Sound
+
+
+
   //Movement
 
   this.hop = function(){
       if(this.isJumping === false){
       this.isJumping = true;
-      this.gravity = 1.5;
+      this.playJump();
+      this.gravity = 1.8;
       this.velY = -this.speed*3;
       }
   };
@@ -70,9 +75,9 @@ function Hopper(){
   //Platform Check
 
   this.onCloud = function(cloud){
-    if (this.y >= cloud.y -70 && this.y < cloud.y + cloud.height && this.x >= cloud.x && this.x <= cloud.x + 210) {
+    if (this.y >= cloud.y && this.y < cloud.y + cloud.height && this.x >= cloud.x && this.x <= cloud.x + 210) {
       this.isJumping = false;
-      this.y = (cloud.y - 70);
+      this.y = (cloud.y);
       this.velY = 0;
       return true
     }
