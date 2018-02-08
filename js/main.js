@@ -31,7 +31,13 @@ ctx.fillRect(0,0,canvas.width,canvas.height);
         board = new Board();
         hopper = new Hopper();
         cloud = new Cloud();
+        cloud2 = new Cloud();
+        cloud3 = new Cloud()
         powerUp = new PowerUp();
+        cloud2.x = 200;
+        cloud2.y = 50;
+        cloud3.x = 0;
+        cloud3.y = -150;
         interval = setInterval(updateGame, 1000/60);
       }
       
@@ -43,6 +49,8 @@ ctx.fillRect(0,0,canvas.width,canvas.height);
         powerUp.draw(hopper);
         hopper.draw();
         cloud.draw(hopper);
+        cloud2.draw(hopper);
+        cloud3.draw(hopper);
         frames++;
         hopper.velY += hopper.gravity;
         hopper.x += hopper.velX;
@@ -50,10 +58,12 @@ ctx.fillRect(0,0,canvas.width,canvas.height);
         hopper.velX *= hopper.friction;
         hopper.velY *= hopper.friction;
         hopper.onCloud(cloud);
+        hopper.onCloud(cloud2);
+        hopper.onCloud(cloud3);
         //checkPowerUp();
         hopper.xBoundary();
         hopper.yBoundary();
-        console.log(hopper.velX);
+        console.log(hopper.y);
 
       }
 
@@ -74,19 +84,22 @@ ctx.fillRect(0,0,canvas.width,canvas.height);
 
 
    
- /*     
+     
     //Generators
+
+
+
     
     function generateCloud (){
     
     }
     
-    function generatePowerUp (){
+   // function generatePowerUp (){
     
-    }
+   // }
     
     //Checks
-    */
+    //*/
 
     /*
     

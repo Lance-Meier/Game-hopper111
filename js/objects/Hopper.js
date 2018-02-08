@@ -20,10 +20,10 @@ function Hopper(){
     this.draw();
   }.bind(this);
   this.draw = function(){
-    if(this.y > 200){
-    ctx.drawImage(this.img,this.x,this.y,this.width,this.height);
+    if(this.y < 200){
+      ctx.drawImage(this.img,this.x,this.y+200,this.width,this.height);
     } else {
-      ctx.drawImage(this.img,this.x,this.y+210,this.width,this.height);
+      ctx.drawImage(this.img,this.x,this.y,this.width,this.height);
     }
   };
 
