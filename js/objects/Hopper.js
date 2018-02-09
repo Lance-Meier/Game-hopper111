@@ -2,7 +2,7 @@ function Hopper(){
 
   //Core Properties
   this.x = 350;
-  this.y = 10000;
+  this.y = 350;
   this.width = 125;
   this.height = 125;
   this.speed = 10;
@@ -20,16 +20,8 @@ function Hopper(){
     this.draw();
   }.bind(this);
   this.draw = function(){
-    if(this.y < 200){
-      ctx.drawImage(this.img,this.x,this.y+200,this.width,this.height);
-    } else {
-      ctx.drawImage(this.img,this.x,this.y,this.width,this.height);
-    }
+      ctx.drawImage(this.img,this.x,canvas.height-250,this.width,this.height);
   };
-
-  //Sound
-
-
 
   //Movement
 
@@ -37,7 +29,7 @@ function Hopper(){
       if(this.isJumping === false){
       this.isJumping = true;
       this.playJump();
-      this.gravity = 1.8;
+      this.gravity = 1.5;
       this.velY = -this.speed*3;
       }
   };
@@ -54,7 +46,7 @@ function Hopper(){
       }
   };
 
-  //Boundaries
+  //Board X and Y Boundaries
 
   this.xBoundary = function(){
     if (this.x < -125) {
@@ -75,33 +67,33 @@ function Hopper(){
   //Platform Check
 
   this.onCloud = function(cloud){
-    if (this.y >= cloud.y && this.y < cloud.y + cloud.height && this.x >= cloud.x && this.x <= cloud.x + 210) {
+    if (this.y >= cloud.y -70 && this.y < cloud.y + cloud.height && this.x >= cloud.x && this.x <= cloud.x + 210) {
       this.isJumping = false;
-      this.y = (cloud.y);
+      this.y = (cloud.y - 70);
       this.velY = 0;
       return true
     }
   };
- /*
-  this.gravityDown = function(){
-    this.gravity = 1;
-  };
-  this.gravityUp = function (){
-    this.gravity = 1.5;
-  };
-  this.powerUpTimer = function (){
-    setTimeout(function(){ 
-        this.gravityUp(); 
-    }, 3000);
+
+  this.megaJump = function(){
+  }
+  this.gravityUp = function(){
+  this.velY = -this.speed*7;
+  this.gravity = 0.5;
+  }
+  this.powerUpTimer = function(){
+  this.setTimeout(function(){ 
+      this.gravityUp(); 
+  }, 5000);
   };
 
-  this.powerUp = function(powerUp){
-    if (this.y >= powerUp.y && this.y <= powerUp.y + powerUp.height && this.x >= powerUp.x && this.x <= powerUp.x + powerUp.width){
-        this.gravityDown();
-        this.powerUpTimer();
+  this.checkPowerUp = function(powerUp){
+    if (this.y >= powerUp.y && this.y <= powerUp.y + powerUp.height && this.x >= powerUp.x-40 && this.x <= powerUp.x-40 + powerUp.width){
+      if (this.isJumping===true);
+      this.velY = -this.speed*7;
+      this.powerUpTimer();
     }
   };
-  */
 
 
 

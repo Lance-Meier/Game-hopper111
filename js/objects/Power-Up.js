@@ -1,6 +1,6 @@
     function PowerUp(){
-        this.x = 300;
-        this.y = 300;
+        this.x = 750;
+        this.y = -800;
         this.width = 50;
         this.height = 50;
         this.img = new Image();
